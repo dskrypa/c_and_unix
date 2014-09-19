@@ -1,0 +1,10 @@
+locate Philadelphia
+locate New York
+dist Philadelphia, New York
+dist New York, Syracuse
+add Des Moines, 41.588794, -93.620314
+dist Des Moines, New Orleans
+remove New Orleans
+locate New Orleans
+quit
+

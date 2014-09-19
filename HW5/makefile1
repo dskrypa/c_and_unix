@@ -1,0 +1,14 @@
+CFLAGS=-Wall -g
+LIBS=
+OBJECTS=symTable.o symTable_client.o
+TARGET=hw5p1
+%.o: %.c
+	gcc -c $(CFLAGS) -o $@ $< 
+all: $(TARGET)
+$(TARGET): $(OBJECTS)
+	gcc -o $(TARGET) $(OBJECTS) $(LIBS)
+symTable.o: symTable.h symTable.c
+symTable_client.o: symTable_client.c
+
+clean:
+	rm *.o $(TARGET)

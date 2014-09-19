@@ -1,0 +1,16 @@
+CFLAGS=-Wall -g
+LIBS=-lm
+OBJECTS=dsUtils.o symTable.o geoDistance.o geoDistRunner.o
+TARGET=hw5p2
+%.o: %.c
+	gcc -c $(CFLAGS) -o $@ $< 
+all: $(TARGET)
+$(TARGET): $(OBJECTS)
+	gcc -o $(TARGET) $(OBJECTS) $(LIBS)
+dsUtils.o: dsUtils.c dsUtils.h
+symTable.o: symTable.c symTable.h
+geoDistance.o: geoDistance.c geoDistance.h
+geoDistRunner.o: geoDistRunner.c
+
+clean:
+	rm *.o $(TARGET)
